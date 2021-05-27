@@ -2,9 +2,40 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magic 8 Ball</title>
+<!--<link rel="icon" href="" type="image/jpg" sizes="16x16">-->
+
+<!-- Custom style sheet -->
+<link href="css/MagicEightBall.css" rel="stylesheet">
 </head>
 <body>
+   <div id="eightBallContent">
+      <h1 class=" header">Magic 8 Ball</h1>
+      <p id="info" class="info">Enter your question and press Ask Question</p>
+      <input type="text" id="askQuestion" />
 
+      <div id="buttons">
+         <button id="questionButton" class="button">Ask Question</button>
+         <button id="resetButton" class="button">Reset</button>
+      </div>
+
+      <div id="eightBall" class="eightBallOuter">
+         <div id="eightBallInner" class="eightBallInner innerInitial">
+            <div>
+               <p id="eightBallNumber" class="eightBallNumber">8</p>
+
+               <p id="eightBallAnswer"></p>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+
+   <!-- JavaScript Sources-->
+   <script src="js/MagicEightBall.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>
 </html>
