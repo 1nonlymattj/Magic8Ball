@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 
 var answers = ["It is certain",
@@ -47,6 +47,8 @@ window.onload = function() {
          $(eightBall).effect("shake", { times: 4 }, 1000);
          setTimeout(() => {
             eightBallNumber.innerText = "";
+           $(eightBallInner).removeClass("innerInitial");
+           $(eightBallInner).addClass("innerFinish");
             eightBallNumber
             var num = Math.floor(Math.random() * Math.floor(answers.length));
             eightBallAnswer.innerText = answers[num];
@@ -60,6 +62,9 @@ window.onload = function() {
          setTimeout(() => {
             eightBallNumber.innerText = "";
             eightBallNumber
+            $(triangle).removeClass("hidden");
+            $(eightBallInner).removeClass("innerInitial");
+           $(eightBallInner).addClass("innerFinish");
             var num = Math.floor(Math.random() * Math.floor(answers.length));
             eightBallAnswer.innerText = answers[num];
             console.log("Answer: " + eightBallAnswer.innerText);
@@ -73,6 +78,9 @@ window.onload = function() {
          eightBallAnswer.innerText = "";
          eightBallNumber.innerText = "8";
          askQuestion.value = "";
+         $(eightBallInner).removeClass("innerFinish");
+           $(eightBallInner).addClass("innerInitial");
+         $(triangle).addClass("hidden");
          console.log("Reset 8 Ball");
 
       } else {
@@ -87,6 +95,9 @@ window.onload = function() {
          eightBallAnswer.innerText = "";
          eightBallNumber.innerText = "8";
          askQuestion.value = "";
+         $(eightBallInner).removeClass("innerFinish");
+           $(eightBallInner).addClass("innerInitial");
+         $(triangle).addClass("hidden");
          console.log("Reset 8 Ball");
       }
 
