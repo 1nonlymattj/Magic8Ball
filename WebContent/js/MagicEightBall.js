@@ -1,7 +1,6 @@
 /**
  *
  */
-
 var answers = ["It is certain",
    "It is decidedly so",
    "Without a doubt",
@@ -39,7 +38,6 @@ window.onload = function() {
          createDialog();
       } else if (eightBallNumber.innerText != 8 || eightBallAnswer.innerText != "") {
          eightBallAnswer.innerText = "";
-         eightBallNumber.innerText = "8";
          console.log("Reset 8 Ball");
          $('html, body').animate({
             scrollTop: $(askQuestion).offset().top

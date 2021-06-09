@@ -36,8 +36,8 @@ body {
    background-color: #121212;
    border: 3px solid #111111;
    border-radius: 50%;
-   width: 600px;
-   height: 600px;
+   width: 350px;
+   height: 350px;
    margin: 0 auto;
    margin-bottom: 30px;
    margin-top: 30px;
@@ -45,8 +45,8 @@ body {
 
 .eightBallInner {
    border-radius: 50%;
-   width: 300px;
-   height: 300px;
+   width: 175px;
+   height: 175px;
    margin: 25% auto;
 }
 
@@ -61,8 +61,8 @@ body {
 }
 
 .eightBallNumber {
-   font-size: 150px;
-   margin: 75px auto;
+   font-size: 75px;
+   margin: 35px auto;
    color: #000000;
    font-weight: bold;
    align-items: center;
@@ -70,11 +70,11 @@ body {
 
 #eightBallAnswer {
    text-align: center;
-    top: -248px;
-    left: 102px;
-    color: #7dacf1;
+    top: -154px;
+    left: 38px;
+    color: #eee5e5;
     letter-spacing: 2px;
-    font-size: 24px;
+    font-size: 18px;
     position: relative;
     width: 93px;
     height: 93px;
@@ -83,9 +83,9 @@ body {
 }
 
 #askQuestion {
-   margin: 20px;
+   margin: 10px;
    padding: 10px;
-   width: 400px;
+   width: 325px;
    font-size: 22px;
 }
 
@@ -96,7 +96,7 @@ body {
 
 .button {
    height: 40px;
-   width: 150px;
+   width: 130px;
    border-radius: 8px;
    background-color: #4287f5;
    color: #ffffff;
@@ -119,9 +119,9 @@ body {
 .triangleDown {
    width: 0;
    height: 0;
-   border-left: 120px solid transparent;
-   border-right: 120px solid transparent;
-   border-top: 160px solid #4287f5;
+   border-left: 78px solid transparent;
+   border-right: 78px solid transparent;
+   border-top: 103px solid #4287f5;
    margin: 30% auto;
 }
 
