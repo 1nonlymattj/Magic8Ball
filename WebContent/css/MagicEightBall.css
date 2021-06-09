@@ -73,13 +73,14 @@ body {
     top: -154px;
     left: 38px;
     color: #eee5e5;
-    letter-spacing: 2px;
-    font-size: 18px;
+    letter-spacing: 1px;
+    font-size: 17px;
     position: relative;
     width: 93px;
     height: 93px;
     margin: 0px;
     align-items: center;
+    align-content:center;
 }
 
 #askQuestion {
