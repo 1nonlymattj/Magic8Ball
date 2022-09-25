@@ -20,7 +20,7 @@ var answers = ["It is certain",
    "Cannot predict now",
    "Concentrate and ask again"];
 
-window.onload = function() {
+window.onload = function () {
    var eightBallNumber = document.getElementById("eightBallNumber");
    var eightBallAnswer = document.getElementById("eightBallAnswer");
    var eightBallInner = document.getElementById("eightBallInner");
@@ -31,7 +31,51 @@ window.onload = function() {
    var info = document.getElementById("info");
 
 
-   questionButton.addEventListener("click", function() {
+   questionButton.addEventListener("click", function () {
+      getAnswer();
+   });
+
+   resetButton.addEventListener("click", function () {
+      if (eightBallNumber.innerText != 8 || eightBallAnswer.innerText != "") {
+         eightBallAnswer.innerText = "";
+         eightBallNumber.innerText = "8";
+         askQuestion.value = "";
+         $(eightBallInner).removeClass("innerFinish");
+         $(eightBallInner).addClass("innerInitial");
+         $(triangle).addClass("hidden");
+         console.log("Reset 8 Ball");
+
+      } else {
+         askQuestion.value = "";
+         console.log("Cleared Question");
+      }
+
+   });
+
+   askQuestion.addEventListener("click", function () {
+      if (eightBallNumber.innerText != 8 || eightBallAnswer.innerText != "") {
+         eightBallAnswer.innerText = "";
+         eightBallNumber.innerText = "8";
+         askQuestion.value = "";
+         $(eightBallInner).removeClass("innerFinish");
+         $(eightBallInner).addClass("innerInitial");
+         $(triangle).addClass("hidden");
+         console.log("Reset 8 Ball");
+      }
+
+   });
+
+   askQuestion.addEventListener("keypress", function (event) {
+      //TODO: store last key -> if ENTER reset field;
+      // If the user presses the "Enter" key on the keyboard
+      if (event.key === "Enter") {
+         getAnswer();
+      }
+      // Disable sending the related form
+      return false;
+   });
+
+   function getAnswer() {
       if (askQuestion.value.length < 1) {
          console.log('Question not entered');
          //alert('Please Enter a Question');
@@ -45,8 +89,8 @@ window.onload = function() {
          $(eightBall).effect("shake", { times: 4 }, 1000);
          setTimeout(() => {
             eightBallNumber.innerText = "";
-           $(eightBallInner).removeClass("innerInitial");
-           $(eightBallInner).addClass("innerFinish");
+            $(eightBallInner).removeClass("innerInitial");
+            $(eightBallInner).addClass("innerFinish");
             eightBallNumber
             var num = Math.floor(Math.random() * Math.floor(answers.length));
             eightBallAnswer.innerText = answers[num];
@@ -62,44 +106,14 @@ window.onload = function() {
             eightBallNumber
             $(triangle).removeClass("hidden");
             $(eightBallInner).removeClass("innerInitial");
-           $(eightBallInner).addClass("innerFinish");
+            $(eightBallInner).addClass("innerFinish");
             var num = Math.floor(Math.random() * Math.floor(answers.length));
             eightBallAnswer.innerText = answers[num];
             console.log("Answer: " + eightBallAnswer.innerText);
          }, 1000)
 
       }
-   });
-
-   resetButton.addEventListener("click", function() {
-      if (eightBallNumber.innerText != 8 || eightBallAnswer.innerText != "") {
-         eightBallAnswer.innerText = "";
-         eightBallNumber.innerText = "8";
-         askQuestion.value = "";
-         $(eightBallInner).removeClass("innerFinish");
-           $(eightBallInner).addClass("innerInitial");
-         $(triangle).addClass("hidden");
-         console.log("Reset 8 Ball");
-
-      } else {
-         askQuestion.value = "";
-         console.log("Cleared Question");
-      }
-
-   })
-
-   askQuestion.addEventListener("click", function() {
-      if (eightBallNumber.innerText != 8 || eightBallAnswer.innerText != "") {
-         eightBallAnswer.innerText = "";
-         eightBallNumber.innerText = "8";
-         askQuestion.value = "";
-         $(eightBallInner).removeClass("innerFinish");
-           $(eightBallInner).addClass("innerInitial");
-         $(triangle).addClass("hidden");
-         console.log("Reset 8 Ball");
-      }
-
-   })
+   }
 
    function createDialog() {
       let self = this;
@@ -116,12 +130,12 @@ window.onload = function() {
                text: 'Ok',
                'class': 'dialogButton',
                'id': 'confim',
-               click: function() {
+               click: function () {
                   $(this).dialog('destroy');
                }
             }
          }
       });
    }
-   
+
 };
