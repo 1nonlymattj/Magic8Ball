@@ -1,0 +1,10 @@
+// Service workers require HTTPS (or localhost). They will NOT register on plain http://
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", async () => {
+    try {
+      await navigator.serviceWorker.register("/sw.js");
+    } catch {
+      // no-op: still works as a normal static site
+    }
+  });
+}

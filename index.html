@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Magic 8 Ball</title>
+  <link rel="icon" href="resources/img/8ball1.png" type="image/png" sizes="16x16" />
+
+  <link href="resources/css/MagicEightBall.css" rel="stylesheet" />
+
+</head>
+<body>
+   <!-- Top-right dashboard (cog) -->
+<button id="themeBtn" class="themeBtn" type="button" aria-label="Toggle dark mode">🌙</button>
+<button id="dashboardBtn" class="dashboardBtn" type="button" aria-label="Dashboard">⚙️</button>
+
+<!-- PIN Modal -->
+<div id="pinModal" class="modal hidden" aria-hidden="true">
+  <div class="modalCard" role="dialog" aria-modal="true" aria-labelledby="pinTitle">
+    <h2 id="pinTitle" class="modalTitle">Dashboard</h2>
+    <p class="modalText">Enter 4-digit PIN</p>
+
+    <input id="pinInput" class="pinInput" type="password" inputmode="numeric" maxlength="4" autocomplete="off" />
+
+    <div class="modalActions">
+      <button id="pinCancel" class="button buttonSecondary" type="button">Cancel</button>
+      <button id="pinSubmit" class="button" type="button">Unlock</button>
+    </div>
+
+    <p id="pinError" class="pinError hidden">Incorrect PIN</p>
+  </div>
+</div>
+
+  <main id="eightBallContent" class="container">
+    <h1 class="header">Magic 8 Ball</h1>
+    <p id="info" class="info">Enter your question and press Ask Question</p>
+
+    <input
+      type="text"
+      id="askQuestion"
+      placeholder="Type your question..."
+      autocomplete="off"
+      inputmode="text"
+    />
+
+    <div id="buttons">
+  <button id="questionButton" class="button" type="button">Ask Question</button>
+  <button id="resetButton" class="button" type="button">Reset</button>
+</div>
+
+    <section id="eightBall" class="eightBallOuter" aria-label="Magic 8 Ball">
+      <div id="eightBallInner" class="eightBallInner innerInitial">
+        <div id="triangle" class="triangleDown hidden" aria-hidden="true"></div>
+        <p id="eightBallNumber" class="eightBallNumber">8</p>
+        <p id="eightBallAnswer" aria-live="polite"></p>
+      </div>
+    </section>
+
+     <!-- Dashboard Tools (HIDDEN until unlocked) -->
+      <div id="dashboardPanel" class="hidden">
+
+      <div id="buttons">
+         <button id="historyToggle" class="button">History</button>
+         <button id="exportJson" class="button buttonSecondary" type="button">Export JSON</button>
+         <button id="exportCsv" class="button">Export CSV</button>
+      </div>
+
+      <section id="historyPanel" class="historyPanel hidden" aria-label="Question history">
+         <div class="historyHeader">
+            <h2 class="historyTitle">History</h2>
+            <div class="historyActions">
+            <button id="historyClear" class="button buttonDanger" type="button">Clear</button>
+            </div>
+         </div>
+         <ol id="historyList" class="historyList"></ol>
+         <p id="historyEmpty" class="historyEmpty hidden">No questions yet.</p>
+      </section>
+
+      </div>
+  </main>
+
+  <!-- Native dialog (no jQuery UI needed) -->
+  <dialog id="alertDialog" class="dialog">
+    <h3 id="alertTitle" class="dialogTitle">No Question Entered</h3>
+    <p id="alertMessage" class="dialogMessage">Please enter a question and try again.</p>
+    <form method="dialog" class="dialogFooter">
+      <button class="button dialogButton" value="ok">OK</button>
+    </form>
+  </dialog>
+
+  <!-- App -->
+   <script src="resources/js/answers.js"></script>
+   <script src="resources/js/variables.js"></script>
+   <script src="resources/js/storage.js"></script>
+   <script src="resources/js/app.js"></script>
+
+</body>
+</html>

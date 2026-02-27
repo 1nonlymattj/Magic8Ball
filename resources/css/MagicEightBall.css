@@ -1,0 +1,532 @@
+@charset "UTF-8";
+
+:root {
+  --bg: #ebebeb;
+  --text: #424242;
+  --panel: #ffffff;
+  --panelBorder: #d4d4d4;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Panels you already use (historyPanel/modal/etc.) */
+.historyPanel,
+.modalCard {
+  background: var(--panel);
+  border-color: var(--panelBorder);
+}
+
+/* Dark mode overrides */
+body.dark {
+  --bg: #0f0f10;
+  --text: #e5e7eb;
+  --panel: #171717;
+  --panelBorder: #2a2a2a;
+}
+
+/* optional: make buttons a bit darker in dark mode */
+body.dark .buttonSecondary {
+  background-color: #374151;
+}
+body.dark .dashboardBtn,
+body.dark .themeBtn {
+  background: #171717;
+  color: #e5e7eb;
+  border-color: #2a2a2a;
+}
+
+/* ===== Dark mode text overrides ===== */
+body.dark {
+  color: #ffffff;
+}
+
+/* Common dark text elements */
+body.dark .header,
+body.dark .info,
+body.dark p,
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+  color: #ffffff !important;
+}
+
+body.dark .eightBallNumber {
+   color: #000000 !important;
+}
+
+/* History text */
+body.dark .historyItem,
+body.dark .historyTitle,
+body.dark .modalTitle,
+body.dark .modalText {
+  color: #ffffff;
+}
+
+body.dark .historyPanel,
+body.dark .historyItem {
+  background-color: #171717;
+}
+
+body.dark .modalCard {
+   background-color: #171717;
+}
+
+/* Inputs */
+body.dark #askQuestion {
+  background: #1f1f1f;
+  color: #ffffff;
+  border: 1px solid #333;
+}
+
+#eightBall {
+   align-content: center;
+   align-items: center;
+   text-align: center;
+}
+
+#eightBallContent {
+   align-content: center;
+   align-items: center;
+   text-align: center;
+   
+}
+
+.header {
+   font-weight: 100;
+   font-size: 40px;
+   color: #424242;
+}
+
+#content {
+   width: 600px;
+   margin: 0 auto;
+   margin-top: 50px;
+   text-align: center;
+   font-family: 'Helvetica Neue', arial;
+   font-weight: 100;
+}
+
+body.dark .eightBallOuter {
+   background-color: #4d0f3c;
+   border: 3px solid #3c0e0e;
+   border-radius: 50%;
+   width: 350px;
+   height: 350px;
+   margin: 0 auto;
+   margin-bottom: 30px;
+   margin-top: 30px;
+}
+
+.eightBallOuter {
+   background-color: #121212;
+   border: 3px solid #111111;
+   border-radius: 50%;
+   width: 350px;
+   height: 350px;
+   margin: 0 auto;
+   margin-bottom: 30px;
+   margin-top: 30px;
+}
+
+.eightBallInner {
+   border-radius: 50%;
+   width: 175px;
+   height: 175px;
+   margin: 25% auto;
+}
+
+.innerInitial {
+   background-color: #f1f1f1;
+   border: 1px solid #f1f1f1;
+}
+
+.innerFinish {
+   background-color: #000000;
+   border: 1px solid #000000;
+}
+
+.eightBallNumber {
+   font-size: 75px;
+   margin: 35px auto;
+   color: #000000;
+   font-weight: bold;
+   align-items: center;
+}
+
+#eightBallAnswer {
+   text-align: center;
+    top: -154px;
+    left: 38px;
+    color: #eee5e5;
+    letter-spacing: 1px;
+    font-size: 17px;
+    position: relative;
+    width: 93px;
+    height: 93px;
+    margin: 0px;
+    align-items: center;
+    align-content:center;
+}
+
+#askQuestion {
+   margin: 10px;
+   padding: 10px;
+   width: 325px;
+   font-size: 22px;
+}
+
+.info {
+   font-size: 22px;
+   color: #414141;
+}
+
+.button {
+   height: 40px;
+   width: 130px;
+   border-radius: 8px;
+   background-color: #4287f5;
+   color: #ffffff;
+   font-size: 18px;
+   padding: 5px;
+   margin: 15px;
+}
+
+.dialogButton {
+   height: 40px;
+   width: 350px;
+   border-radius: 8px;
+   background-color: #4287f5;
+   color: #ffffff;
+   font-size: 18px;
+   padding: 5px;
+   margin: 15px;
+}
+
+.triangleDown {
+   width: 0;
+   height: 0;
+   border-left: 78px solid transparent;
+   border-right: 78px solid transparent;
+   border-top: 103px solid #4287f5;
+   margin: 30% auto;
+}
+
+.hidden {
+   display: none;
+}
+
+.ui-dialog {
+   background: #FFFFFF;
+   border: 2px #000000 solid;
+   border-radius:3px;
+}
+
+.ui-dialog-titlebar {
+   background: #BFBFBF;
+   text-align:center;
+   padding:.5em;
+   font-family: sans-serif;
+   font-weight:bold;
+   font-size:18px;
+}
+
+.ui-dialog-content{
+   min-height:50px !important;
+   padding:1em 2em;
+   font-family: sans-serif;
+   font-size:18px;
+   color: #000000 !important;
+}
+
+.ui-dialog-buttonset {
+   display:flex;
+   justify-content: center;
+
+}
+
+.ui-dialog-titlebar-close {
+   display: none;
+}
+
+.ui-widget-overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: #232323;
+   opacity: 0.7;
+}
+
+.ui-front {
+   z-index: 100;
+}
+
+.buttonSecondary {
+  background-color: #6b7280;
+}
+
+.buttonDanger {
+  background-color: #dc2626;
+}
+
+/* Shake animation replacing jQuery UI effect */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  15% { transform: translateX(-10px); }
+  30% { transform: translateX(10px); }
+  45% { transform: translateX(-10px); }
+  60% { transform: translateX(10px); }
+  75% { transform: translateX(-6px); }
+  90% { transform: translateX(6px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.9s ease-in-out;
+}
+
+/* History panel */
+.historyPanel {
+  width: min(720px, 92vw);
+  margin: 20px auto 40px;
+  background: #ffffff;
+  border: 1px solid #d4d4d4;
+  border-radius: 10px;
+  padding: 14px 14px 10px;
+  text-align: left;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.historyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.historyTitle {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+  color: #1f2937;
+}
+
+.historyList {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.historyItem {
+  padding: 10px 6px;
+  border-top: 1px solid #eeeeee;
+}
+
+.historyItem:first-child {
+  border-top: none;
+}
+
+.historyQ {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.historyA {
+  color: #2563eb;
+  margin-bottom: 4px;
+}
+
+.historyMeta {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.historyEmpty {
+  margin: 0;
+  color: #6b7280;
+  padding: 10px 6px;
+}
+
+/* Native dialog styling */
+.dialog {
+  border: 2px solid #000000;
+  border-radius: 10px;
+  padding: 14px 16px;
+  max-width: 420px;
+}
+
+.dialog::backdrop {
+  background: rgba(35,35,35,0.7);
+}
+
+.dialogTitle {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.dialogMessage {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.dialogFooter {
+  display: flex;
+  justify-content: center;
+}
+
+/* History Section */
+.historySection {
+  width: 350px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.historyControls {
+  margin-bottom: 10px;
+}
+
+.historyList {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.historyItem {
+  background: #ffffff;
+  margin: 6px 0;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+}
+
+.themeBtn {
+  position: fixed;
+  top: 12px;
+  right: 64px; /* sits left of the cog */
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid #cfcfcf;
+  background: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.dashboardBtn {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid #cfcfcf;
+  background: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.dashboardPanel {
+  width: min(760px, 92vw);
+  margin: 16px auto 40px;
+  text-align: center;
+}
+
+.historyControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.historyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.historyItem {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.historyEmpty {
+  color: #666;
+  margin: 10px 0 0;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(35,35,35,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+}
+
+.modalCard {
+  width: min(420px, 92vw);
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  border: 2px solid #000;
+  text-align: center;
+}
+
+.modalTitle { margin: 0 0 8px; font-size: 20px; }
+.modalText { margin: 0 0 12px; }
+
+.pinInput {
+  width: 140px;
+  font-size: 26px;
+  padding: 10px;
+  text-align: center;
+  letter-spacing: 6px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.modalActions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.pinError {
+  color: #b91c1c;
+  margin: 12px 0 0;
+}
+
+.buttonDanger {
+  background-color: #dc2626;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(35,35,35,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none !important;
+}
